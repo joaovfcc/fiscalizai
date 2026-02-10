@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/FiscalizAI.Api/FiscalizAI.Api.csproj" />
+    <Project Path="src/FiscalizAI.Core/FiscalizAI.Core.csproj" />
+    <Project Path="src/FiscalizAI.Infra/FiscalizAI.Infra.csproj" />
+    <Project Path="src/FiscalizAI.Worker/FiscalizAI.Worker.csproj" />
+  </Folder>
+</Solution>
