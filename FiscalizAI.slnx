@@ -5,4 +5,7 @@
     <Project Path="src/FiscalizAI.Infra/FiscalizAI.Infra.csproj" />
     <Project Path="src/FiscalizAI.Worker/FiscalizAI.Worker.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/FiscalizAI.UnitTests/FiscalizAI.UnitTests.csproj" />
+  </Folder>
 </Solution>
