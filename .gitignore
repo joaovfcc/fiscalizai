@@ -18,3 +18,27 @@ appsettings.Development.json
 ## Ignorar Docker volumes/logs
 .docker/
 *.log
+
+# --- ADIÇÕES DE LIMPEZA DO ECOSSISTEMA ---
+
+## Resultados de Testes (Essencial para Unit Tests futuros)
+TestResults/
+*.trx
+Coverage/
+TestResult.xml
+coverage.opencover.xml
+
+## Bancos de Dados Locais e Variáveis de Ambiente
+*.sqlite
+*.sqlite3
+*.db
+*.env
+*.env.local
+
+## IDEs Alternativas (JetBrains Rider)
+.idea/
+*.sln.iml
+
+## Lixo de Sistema Operacional (Windows/Mac)
+.DS_Store
+Thumbs.db

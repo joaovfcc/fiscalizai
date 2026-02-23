@@ -11,7 +11,7 @@ public class Empresa : BaseEntity, IAggregateRoot
 {
     public string RazaoSocial { get; private set; }
     public Cnpj Cnpj { get; private set; }
-    public string? Uf { get; private set; }
+    public string Uf { get; private set; }
     public byte[] CertificadoDigital { get; private set; }
     public string SenhaCertificado { get; private set; }
     public DateTime? DataVencimentoCertificado { get; private set; }
