@@ -1,8 +1,13 @@
 using System.Text;
 using FiscalizAI.Api.Filters;
+using FiscalizAI.Application.Interfaces;
 using FiscalizAI.Application.Interfaces.Auth;
+using FiscalizAI.Application.Services;
+using FiscalizAI.Core.Interfaces;
 using FiscalizAI.Infra.Data;
+using FiscalizAI.Infra.Data.UnitOfWork;
 using FiscalizAI.Infra.Identity;
+using FiscalizAI.Infra.Repositories;
 using FiscalizAI.Infra.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -64,6 +69,9 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IEmpresaRepository, EmpresaRepository>();
+builder.Services.AddScoped<IEmpresaService, EmpresaService>();
 
 builder.Services.AddControllers();
 

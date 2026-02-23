@@ -1,8 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using Microsoft.Extensions.Configuration;
 
-namespace FiscalizAI.Application.Interfaces;
+namespace FiscalizAI.Application.Interfaces.Auth;
 
 public interface ITokenService
 {

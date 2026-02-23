@@ -1,4 +1,4 @@
-﻿using FiscalizAI.Core.Entities;
+using FiscalizAI.Core.Entities;
 using FiscalizAI.Infra.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +10,7 @@ public class FiscalizAIContext : IdentityDbContext<ApplicationUser>
 
     public DbSet<Empresa> Empresas { get; set; }
     public DbSet<NotaFiscal> NotasFiscais { get; set; }
+    public DbSet<AcessoEmpresa> AcessoEmpresas { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);

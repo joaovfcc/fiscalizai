@@ -1,6 +1,6 @@
 using FiscalizAI.Application.DTOs.Auth;
 
-namespace FiscalizAI.Application.Interfaces;
+namespace FiscalizAI.Application.Interfaces.Auth;
 
 public interface IAuthService
 {
