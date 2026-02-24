@@ -42,3 +42,4 @@ coverage.opencover.xml
 ## Lixo de Sistema Operacional (Windows/Mac)
 .DS_Store
 Thumbs.db
+docs/
