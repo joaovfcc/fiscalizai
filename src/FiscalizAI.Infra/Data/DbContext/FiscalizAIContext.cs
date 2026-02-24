@@ -16,32 +16,32 @@ public class FiscalizAIContext : IdentityDbContext<ApplicationUser>
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(FiscalizAIContext).Assembly);
 
-        modelBuilder.Entity<ApplicationUser>(b =>
+        modelBuilder.Entity<ApplicationUser>(builder =>
         {
-            b.ToTable("AspNetUsers");
-            b.Property(b => b.NomeCompleto).HasMaxLength(100);
-            b.Property(b => b.RefreshToken).HasMaxLength(256);
-            b.Property(b => b.RefreshTokenExpiryTime).HasColumnType("timestamp with time zone");
+            builder.ToTable("AspNetUsers");
+            builder.Property(user => user.NomeCompleto).HasMaxLength(100);
+            builder.Property(user => user.RefreshToken).HasMaxLength(256);
+            builder.Property(user => user.RefreshTokenExpiryTime).HasColumnType("timestamp with time zone");
            
         });
 
-        modelBuilder.Entity<AcessoEmpresa>(b =>
+        modelBuilder.Entity<AcessoEmpresa>(builder =>
         {
-            b.ToTable("AcessoEmpresas"); // Nome da tabela no banco
+            builder.ToTable("AcessoEmpresas"); // Nome da tabela no banco
 
             // A CHAVE MÁGICA: Chave Composta (Isso impede duplicidade de vínculo)
-            b.HasKey(ue => new { ue.UserId, ue.EmpresaId });
+            builder.HasKey(ae => new { ae.UserId, ae.EmpresaId });
 
             // Relacionamento com o Usuário (Lado String do Identity)
-            b.HasOne(ue => ue.User)
+            builder.HasOne(ae => ae.User)
                 .WithMany(u => u.AcessoEmpresas) // Certifique-se que ApplicationUser tem essa lista
-                .HasForeignKey(ue => ue.UserId)
+                .HasForeignKey(ae => ae.UserId)
                 .OnDelete(DeleteBehavior.Cascade); // Se deletar o user, apaga o vínculo
 
             // Relacionamento com a Empresa (Lado Guid)
-            b.HasOne(ue => ue.Empresa)
+            builder.HasOne(ae => ae.Empresa)
                 .WithMany() 
-                .HasForeignKey(ue => ue.EmpresaId)
+                .HasForeignKey(ae => ae.EmpresaId)
                 .OnDelete(DeleteBehavior.Cascade);
         });
 

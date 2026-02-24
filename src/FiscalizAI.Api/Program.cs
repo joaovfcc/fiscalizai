@@ -70,6 +70,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<ICryptographyService, CryptographyService>();
 builder.Services.AddScoped<IEmpresaRepository, EmpresaRepository>();
 builder.Services.AddScoped<IEmpresaService, EmpresaService>();
 
