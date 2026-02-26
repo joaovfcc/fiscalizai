@@ -18,7 +18,7 @@ public class EmpresaConfiguration : IEntityTypeConfiguration<Empresa>
         builder.Property(e => e.RazaoSocial)
             .IsRequired()
             .HasMaxLength(255)
-            .HasColumnName("varchar(200)");
+            .HasColumnType("varchar(200)");
 
         builder.Property(e => e.Uf)
             .HasMaxLength(2)

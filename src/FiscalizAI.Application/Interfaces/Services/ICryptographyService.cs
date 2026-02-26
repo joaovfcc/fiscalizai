@@ -1,4 +1,4 @@
-namespace FiscalizAI.Core.Services;
+namespace FiscalizAI.Application.Interfaces;
 
 public interface ICryptographyService
 {

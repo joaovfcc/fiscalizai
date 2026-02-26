@@ -1,7 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using FiscalizAI.Application.DTOs.Auth;
-using FiscalizAI.Application.Interfaces;
+using FiscalizAI.Application.Interfaces.Auth;
 using FiscalizAI.Infra.Identity;
 using Microsoft.AspNetCore.Identity;
 
